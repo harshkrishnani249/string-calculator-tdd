@@ -16,3 +16,11 @@ To use the String Calculator, ensure you have Ruby installed on your system.
 3. Install dependencies
    ```sh
    bundle install
+
+## **Usage**
+
+### **Running Tests (Recommended)**
+Since this project follows **TDD**, the best way to use it is by running the test suite:
+
+```sh
+rspec
