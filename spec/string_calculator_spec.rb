@@ -32,5 +32,13 @@ RSpec.describe StringCalculator do
     it "ignores empty input between newlines ('1\\n\\n2,3' → 6)" do
       expect(StringCalculator.add("1\n\n2,3")).to eq(6)
     end
+
+    it "handles a custom single-character delimiter" do
+      expect(StringCalculator.add("//;\n1;2")).to eq(3)
+    end
+
+    it "returns 7 for the string '//;\n2;5'" do
+      expect(StringCalculator.add("//;\n2;5")).to eq(7)
+    end
   end
 end
