@@ -12,7 +12,7 @@ module StringCalculator
 
     raise_if_negative(num_array)
 
-    num_array.sum
+    num_array.reject { |num| num > 1000 }.sum
   end
 
   private
