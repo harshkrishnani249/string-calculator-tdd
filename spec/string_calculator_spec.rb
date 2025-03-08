@@ -60,5 +60,9 @@ RSpec.describe StringCalculator do
     it "includes 1000 in the sum" do
       expect(StringCalculator.add("1000,1")).to eq(1001)
     end
+
+    it "supports delimiters of any length enclosed in brackets" do
+      expect(StringCalculator.add("//[***]\n1***2***3")).to eq(6)
+    end
   end
 end
