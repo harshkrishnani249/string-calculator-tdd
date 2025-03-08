@@ -25,10 +25,12 @@ module StringCalculator
   end
 
   def self.get_delimiter(numbers)
-    return numbers.match(%r{//\[(.+?)\]})[1] if numbers.start_with?("//[")
-    return numbers[2] if numbers.start_with?("//")
+    return /[\n,]/ unless numbers.start_with?("//")
 
-    /[\n,]/
+    delimiters = numbers.scan(/\[(.*?)\]/).flatten
+    delimiters = [numbers[2]] if delimiters.empty? # For single-character case
+
+    Regexp.union(delimiters) # Converting to regex for splitting
   end
 
   def self.raise_if_negative(num_array)
