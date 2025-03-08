@@ -31,3 +31,7 @@ If you want to manually test the calculator, open **IRB** and load the module:
 
 ```sh
 irb -r ./lib/string_calculator.rb
+```
+Then, run:
+```sh
+  StringCalculator.add("1,2,3")
