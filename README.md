@@ -4,7 +4,25 @@ String Calculator is a simple Ruby program that computes the sum of numbers in a
 
 ## Installation
 
-To use the String Calculator, ensure you have Ruby installed on your system.
+### Prerequisites
+Ensure you have the correct Ruby and Bundler versions installed:
+- **Ruby**: 2.7.2
+- **Bundler**: 2.1.4
+
+#### Install Ruby (if not already installed)
+Use a Ruby version manager like **rbenv** or **RVM**:
+```sh
+# Using rbenv
+rbenv install 2.7.2
+rbenv global 2.7.2
+
+# Using RVM
+rvm install 2.7.2
+rvm use 2.7.2 --default
+```
+
+#### Install Bundler 2.1.4 (if not installed)
+gem install bundler -v 2.1.4
 
 ### Steps:
 1. Clone this repository:
@@ -16,6 +34,14 @@ To use the String Calculator, ensure you have Ruby installed on your system.
 3. Install dependencies
    ```sh
    bundle install
+
+### Verify Installation
+After setup, verify that everything is correct by running the following commands:
+
+```sh
+ruby -v   # Should output 2.7.2
+bundler -v  # Should output Bundler version 2.1.4
+```
 
 ## **Usage**
 
