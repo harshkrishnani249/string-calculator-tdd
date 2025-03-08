@@ -53,3 +53,16 @@ StringCalculator.add("-1,2,-3")        # Raises: "negatives not allowed: -1, -3"
 - Handles **multiple delimiters** (e.g., `"//[*][%]\n1*2%3"` → `6`).
 - Ignores numbers **greater than 1000**.
 - Raises an exception for **negative numbers**.
+
+## Project Structure
+
+```bash
+📦 string-calculator-tdd-kata
+ ┣ 📂 lib
+ ┃ ┗ 📜 string_calculator.rb  # Main logic
+ ┣ 📂 spec
+ ┃ ┗ 📜 string_calculator_spec.rb  # RSpec tests
+ ┣ 📜 README.md  # Project documentation
+ ┣ 📜 Gemfile
+ ┣ 📜 .rspec
+ ┗ 📜 .gitignore
