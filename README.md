@@ -45,3 +45,11 @@ StringCalculator.add("1\n2,3")         # Output: 6
 StringCalculator.add("//;\n2;5")       # Output: 7  
 StringCalculator.add("1001,2")         # Output: 2 (ignores numbers > 1000)  
 StringCalculator.add("-1,2,-3")        # Raises: "negatives not allowed: -1, -3"  
+
+## Features:
+- Supports **comma (`,`)** and **newline (`\n`)** as default delimiters.
+- Allows **custom single-character delimiters** (e.g., `"//;\n1;2"` → `3`).
+- Supports **multi-character delimiters** (e.g., `"//[***]\n1***2***3"` → `6`).
+- Handles **multiple delimiters** (e.g., `"//[*][%]\n1*2%3"` → `6`).
+- Ignores numbers **greater than 1000**.
+- Raises an exception for **negative numbers**.
