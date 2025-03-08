@@ -83,7 +83,7 @@ StringCalculator.add("-1,2,-3")        # Raises: "negatives not allowed: -1, -3"
 ## Project Structure
 
 ```bash
-📦 string-calculator-tdd-kata
+📦 string-calculator-tdd
  ┣ 📂 lib
  ┃ ┗ 📜 string_calculator.rb  # Main logic
  ┣ 📂 spec
