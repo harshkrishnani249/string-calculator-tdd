@@ -34,4 +34,14 @@ irb -r ./lib/string_calculator.rb
 ```
 Then, run:
 ```sh
-  StringCalculator.add("1,2,3")
+StringCalculator.add("1,2,3")
+```
+It should return 6
+
+## Examples & Edge Cases
+
+StringCalculator.add("1,2,3,4,5")      # Output: 15  
+StringCalculator.add("1\n2,3")         # Output: 6  
+StringCalculator.add("//;\n2;5")       # Output: 7  
+StringCalculator.add("1001,2")         # Output: 2 (ignores numbers > 1000)  
+StringCalculator.add("-1,2,-3")        # Raises: "negatives not allowed: -1, -3"  
