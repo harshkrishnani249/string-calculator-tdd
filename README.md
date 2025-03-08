@@ -66,3 +66,17 @@ StringCalculator.add("-1,2,-3")        # Raises: "negatives not allowed: -1, -3"
  ┣ 📜 Gemfile
  ┣ 📜 .rspec
  ┗ 📜 .gitignore
+
+```
+## Implementation Details
+The String Calculator implements the following requirements:
+
+- Returns 0 for an empty string input. 
+- Supports adding up to two numbers, separated by commas. 
+- Handles an unknown amount of numbers. 
+- Supports newline (\n) as a valid delimiter along with commas. 
+- Allows custom delimiters specified in the format: "//[delimiter]\n[numbers]". 
+- Supports multi-character delimiters (e.g., "//[***]\n1***2***3" → 6). 
+- Supports multiple delimiters (e.g., "//[*][%]\n1*2%3" → 6). 
+- Ignores numbers greater than 1000 (e.g., "2,1001" → 2). 
+- Throws an exception for negative numbers, listing all negatives in the error message. 
