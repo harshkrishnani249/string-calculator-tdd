@@ -20,5 +20,17 @@ RSpec.describe StringCalculator do
     it "returns the sum of multiple numbers" do
       expect(StringCalculator.add("1,2,3,4,5")).to eq(15)
     end
+
+    it "supports newlines as a delimiter ('1\\n2,3' → 6)" do
+      expect(StringCalculator.add("1\n2,3")).to eq(6)
+    end
+
+    it "handles numbers separated only by newlines ('1\\n2\\n3' → 6)" do
+      expect(StringCalculator.add("1\n2\n3")).to eq(6)
+    end
+
+    it "ignores empty input between newlines ('1\\n\\n2,3' → 6)" do
+      expect(StringCalculator.add("1\n\n2,3")).to eq(6)
+    end
   end
 end
