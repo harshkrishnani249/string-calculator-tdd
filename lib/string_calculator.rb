@@ -7,10 +7,16 @@ module StringCalculator
 
     if numbers.start_with?("//")
       delimiter = numbers[2]
-      numbers = numbers[4..]
+      numbers = remove_delimiter_prefix(numbers)
       return numbers.split(delimiter).map(&:to_i).sum
     end
 
     numbers.split(/[\n,]/).map(&:to_i).sum
+  end
+
+  private
+
+  def self.remove_delimiter_prefix(numbers)
+    numbers.start_with?("//") ? numbers[4..] : numbers
   end
 end
