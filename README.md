@@ -11,6 +11,8 @@ To use the String Calculator, ensure you have Ruby installed on your system.
    ```sh
    git clone https://github.com/harshkrishnani249/string-calculator-tdd.git
 2. Navigate to the project directory:
+   ```sh
    cd string-calculator-tdd-kata
 3. Install dependencies
+   ```sh
    bundle install
