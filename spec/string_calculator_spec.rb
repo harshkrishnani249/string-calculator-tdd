@@ -44,5 +44,9 @@ RSpec.describe StringCalculator do
     it "returns 9 for the string '//#\n2#3#4'" do
       expect(StringCalculator.add("//#\n2#3#4")).to eq(9)
     end
+
+    it "raises an exception for a single negative number" do
+      expect { StringCalculator.add("-1") }.to raise_error("negatives not allowed: -1")
+    end
   end
 end

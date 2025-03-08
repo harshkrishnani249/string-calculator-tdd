@@ -8,7 +8,14 @@ module StringCalculator
     delimiter = get_delimiter(numbers)
     numbers = remove_delimiter_prefix(numbers)
 
-    numbers.split(delimiter).map(&:to_i).sum
+    num_array = numbers.split(delimiter).map(&:to_i)
+
+    # Check for a single negative number
+    if num_array.any? { |num| num < 0 }
+      raise "negatives not allowed: #{num_array.find { |num| num < 0 }}"
+    end
+
+    num_array.sum
   end
 
   private
