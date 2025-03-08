@@ -18,23 +18,17 @@ module StringCalculator
   private
 
   def self.remove_delimiter_prefix(numbers)
-    if numbers.start_with?("//[")
-      numbers.split("\n", 2)[1]
-    elsif numbers.start_with?("//")
-      numbers[4..]
-    else
-      numbers
-    end
+    return numbers.split("\n", 2)[1] if numbers.start_with?("//[")
+    return numbers[4..] if numbers.start_with?("//")
+
+    numbers
   end
 
   def self.get_delimiter(numbers)
-    if numbers.start_with?("//[")
-      numbers.match(%r{//\[(.+?)\]})[1]
-    elsif numbers.start_with?("//")
-      numbers[2]
-    else
-      /[\n,]/
-    end
+    return numbers.match(%r{//\[(.+?)\]})[1] if numbers.start_with?("//[")
+    return numbers[2] if numbers.start_with?("//")
+
+    /[\n,]/
   end
 
   def self.raise_if_negative(num_array)
