@@ -24,7 +24,7 @@ Since this project follows **TDD**, the best way to use it is by running the tes
 
 ```sh
 rspec
-
+```
 ## **Manual Testing in IRB**
 
 If you want to manually test the calculator, open **IRB** and load the module:
