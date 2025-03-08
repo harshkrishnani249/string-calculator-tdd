@@ -10,8 +10,7 @@ module StringCalculator
 
     num_array = numbers.split(delimiter).map(&:to_i)
 
-    negatives = num_array.select { |num| num < 0 }
-    raise "negatives not allowed: #{negatives.join(', ')}" unless negatives.empty?
+    raise_if_negative(num_array)
 
     num_array.sum
   end
@@ -24,5 +23,10 @@ module StringCalculator
 
   def self.get_delimiter(numbers)
     numbers.start_with?("//") ? numbers[2] : /[\n,]/
+  end
+
+  def self.raise_if_negative(num_array)
+    negatives = num_array.select(&:negative?)
+    raise "negatives not allowed: #{negatives.join(', ')}" unless negatives.empty?
   end
 end
