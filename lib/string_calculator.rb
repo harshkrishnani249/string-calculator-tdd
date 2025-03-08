@@ -10,10 +10,8 @@ module StringCalculator
 
     num_array = numbers.split(delimiter).map(&:to_i)
 
-    # Check for a single negative number
-    if num_array.any? { |num| num < 0 }
-      raise "negatives not allowed: #{num_array.find { |num| num < 0 }}"
-    end
+    negatives = num_array.select { |num| num < 0 }
+    raise "negatives not allowed: #{negatives.join(', ')}" unless negatives.empty?
 
     num_array.sum
   end
