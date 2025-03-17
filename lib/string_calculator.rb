@@ -15,6 +15,9 @@ module StringCalculator
     num_array.reject { |num| num > 1000 }.sum
   end
 
+  def self.compute_nums(nums, operator)
+  end
+
   private
 
   def self.remove_delimiter_prefix(numbers)

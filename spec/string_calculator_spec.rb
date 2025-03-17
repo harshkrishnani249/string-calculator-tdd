@@ -69,4 +69,14 @@ RSpec.describe StringCalculator do
       expect(StringCalculator.add("//[*][%]\n1*2%3")).to eq(6)
     end
   end
+
+  describe ".compute_nums" do
+    it "returns 3 when adding '1,2' with '+'" do
+      expect(StringCalculator.compute_nums("1,2", "+")).to eq(3)
+    end
+
+    it "returns 2 when multiplying '1,2' with '*'" do
+      expect(StringCalculator.compute_nums("1,2", "*")).to eq(2)
+    end
+  end
 end
