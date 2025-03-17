@@ -16,13 +16,13 @@ module StringCalculator
   end
 
   def self.compute_nums(nums, operator)
-    num_array = nums.split(",").map { |num| num.to_i }
+    num_array = nums.split(",").map(&:to_i)
 
     case operator
     when "+"
-      num_array.inject(0) { |result, element| result + element}
+      num_array.inject(0, &:+)
     when "*"
-      num_array.inject(1) { |result, element| result * element}
+      num_array.inject(1, &:*)
     end
   end
 
